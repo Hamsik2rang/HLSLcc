@@ -1,5 +1,9 @@
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.0.0)
+SET(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c11")
+SET(CMAKE_CXX_STANDARD 17)
+SET(CMAKE_CXX_STANDARD_REQUIRED ON)
+SET(CMAKE_CXX_EXTENSIONS OFF)
 
 project(HLSLcc)
 
@@ -50,7 +54,7 @@ target_include_directories(hlslcc
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/cbstring>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src/internal_includes>)
 set_target_properties(hlslcc PROPERTIES
-    "CXX_STANDARD" "11"
+    "CXX_STANDARD" "17"
     "CXX_STANDARD_REQUIRED" "ON"
     "PUBLIC_HEADERS" "${HLSLCC_HDRS}")
 install(TARGETS hlslcc
