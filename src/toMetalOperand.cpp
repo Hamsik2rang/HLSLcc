@@ -834,7 +834,7 @@ std::string ToMetal::TranslateVariableName(const Operand* psOperand, uint32_t ui
                         {
                             // Special handling for old matrix arrays
                             oss << "[" << fullIndexOss.str() << " / 4]";
-                            oss << "[" << fullIndexOss.str() << " %% 4]";
+                            oss << "[" << fullIndexOss.str() << " % 4]";
                         }
                         else // This path is atm the default
                         {
